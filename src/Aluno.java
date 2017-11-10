@@ -1,5 +1,7 @@
 import javax.swing.JOptionPane;
 
+import exceptionpac.BlankException;
+
 public class Aluno {
 	
 	private String nome;
