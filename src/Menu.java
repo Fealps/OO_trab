@@ -1,4 +1,7 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class Menu {
@@ -32,6 +35,12 @@ public class Menu {
 
 		janela.setMinimumSize(new Dimension(400, 600));
 		janela.setLayout(new GridLayout(4, 2, 5, 5));
+		
+		btn1.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	Aluno.cadastrar(new Aluno());
+            }
+		});
 
 		janela.pack();
 		janela.setVisible(true);
