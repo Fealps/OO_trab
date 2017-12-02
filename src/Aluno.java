@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -13,25 +14,33 @@ public class Aluno {
 	private String matricula;
 	static private ArrayList<Aluno> alunos = new ArrayList<>();
 
-	public Aluno(String nome, String matricula) {
+	/*public Aluno(String nome, String matricula) {
 		this.nome = nome;
 		this.matricula = matricula;
 
 	}
-
+	*/
 	static void cadastrar(Aluno a) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		String n = JOptionPane.showInputDialog("Informe o seu nome ");
+		a.setNome(n);
+		
+		String m = JOptionPane.showInputDialog("Informe a sua matricula ");
+		a.setMatricula(m);
 		
 		alunos.add(a);
 	}
 
-	static Aluno pesquisar(String m) {
+	static Aluno pesquisar(String n) {
 		
 		Aluno resposta = null;
 		
 		for (int i = 0; i < alunos.size(); i++) {
 		    Aluno aluno = alunos.get(i);
-		    if (m.equals(aluno.nome)) {
-		        System.out.println("o aluno " + m + " esta na posiçao " + i);
+		    if (n.equals(aluno.nome)) {
+		        System.out.println("o aluno " + n + ",da matricula "+ aluno.getMatricula() +" esta na posiçao " + i);
 		        break;
 		    } else {
 		        System.out.println("Esse aluno nao existe!!");
@@ -42,9 +51,9 @@ public class Aluno {
 
 	}
 
-	static boolean excluir(Aluno a) {
+	static void excluir(Aluno a) {
 
-		return true;
+		alunos.remove(a);
 	}
 
 	public String getNome() {
@@ -52,7 +61,7 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
-		if (nome.equals(""))
+		if (nome.equals("")) {
 			try {
 				throw new BlankException("O nome não pode ser em branco!");
 			} catch (BlankException e) {
@@ -60,6 +69,7 @@ public class Aluno {
 				setNome(nome);
 				e.printStackTrace();
 			}
+		}
 
 		this.nome = nome;
 	}
