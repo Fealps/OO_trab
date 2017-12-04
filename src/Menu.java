@@ -10,6 +10,10 @@ public class Menu {
 
 	private static JFrame janela;
 	private static JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+	static Aluno a = null;
+	static MenuRelatorioAluno menuRA = new MenuRelatorioAluno();
+	static MenuCadastrar menuC = new MenuCadastrar();
+
 
 	private static void apresentarGUI() {
 
@@ -39,14 +43,19 @@ public class Menu {
 		janela.setLayout(new GridLayout(4, 2, 5, 5));
 		
 		btn1.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	MenuCadastrar menuC = new MenuCadastrar();
-            	menuC.apresentarGUICadastrar();
+            public void actionPerformed(ActionEvent e) {         	
+            	
+            	menuC.apresentarGUICadastrar(a);
+            
             }
 		});
 		
 		btn2.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	
+    
+            	menuRA.apresentarGUIExibir(a);
+            
             	
             }
 		});

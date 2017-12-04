@@ -12,10 +12,12 @@ public class Aluno {
 
 	private String nome;
 	private String matricula;
-	static private ArrayList<Aluno> alunos = new ArrayList<>();
-
+	static ArrayList<Aluno> alunos = new ArrayList<>();
+		
+	 
 	
 	  public Aluno(String nome, String matricula) { 
+	
 		  this.setNome(nome) ;
 		  this.setMatricula(matricula);
 	  }
@@ -102,6 +104,15 @@ public class Aluno {
 				setMatricula(matricula);
 				e.printStackTrace();
 			}
+	}
+	public void exibirAlunos(Aluno a) {
+		
+		for(int i = 0; i < a.alunos.size();i++){
+			
+			
+			
+		}
+		
 	}
 
 	/*

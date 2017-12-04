@@ -15,14 +15,14 @@ import com.sun.imageio.stream.StreamCloser.CloseAction;
 
 public class MenuCadastrar {
 	
-	Aluno a = null;
+	static Aluno alunoNovo ;
 	private static JFrame janela;
 	private static JTextField JTFnome, JTFmatricula;
 	private static JLabel JLnome, JLmatricula;
 	private static JButton confirmar;
 	
 
-	public static void apresentarGUICadastrar (){
+	public static void apresentarGUICadastrar (Aluno aluno){
 		
 		janela = new JFrame("Cadastro de alunos");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,21 +50,22 @@ public class MenuCadastrar {
             public void actionPerformed(ActionEvent e) {
             	String nome = JTFnome.getText();
             	String matricula = JTFmatricula.getText();
-            	Aluno.cadastrar(new Aluno(nome,matricula));
-            	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);
             	
+            	alunoNovo = new Aluno(nome,matricula);
+            	aluno.cadastrar(alunoNovo);
+            	
+            	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);
+            	janela.dispose();
             }
 		});
 		
 		
 		janela.pack();
 		janela.setVisible(true);
-
+		
+	
 		
 	}
 	
 
-public void menuCadastrar() {
-	apresentarGUICadastrar();
-}
 }
