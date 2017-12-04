@@ -7,15 +7,14 @@ import javax.swing.*;
 
 
 public class Menu {
-
+	
 	private static JFrame janela;
 	private static JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
-	static Aluno a = null;
 	static MenuRelatorioAluno menuRA = new MenuRelatorioAluno();
 	static MenuCadastrar menuC = new MenuCadastrar();
 
 
-	private static void apresentarGUI() {
+	public static void apresentarGUI(Aluno a) {
 
 		janela = new JFrame("Gerenciador Acadêmico");
 
@@ -46,6 +45,7 @@ public class Menu {
             public void actionPerformed(ActionEvent e) {         	
             	
             	menuC.apresentarGUICadastrar(a);
+            	
             
             }
 		});
@@ -69,10 +69,6 @@ public class Menu {
 		janela.pack();
 		janela.setVisible(true);
 
-	}
-
-	public void menuPrincipal() {
-		apresentarGUI();
 	}
 
 }

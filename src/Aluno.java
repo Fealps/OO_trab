@@ -23,20 +23,12 @@ public class Aluno {
 	  }
 	 
 	
-	  static void cadastrar(Aluno a) {
-		
-		/*
-		Scanner in = new Scanner(System.in);
-		
-		String n = 
-				JOptionPane.showInputDialog("Informe o seu nome ");
-		a.setNome(n);
-		
-		String m = 
-				JOptionPane.showInputDialog("Informe a sua matricula ");
-		a.setMatricula(m);
-		
-		alunos.add(a);*/
+	  public Aluno() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	static void cadastrar(Aluno a) {
 		
 		
 		alunos.add(a);

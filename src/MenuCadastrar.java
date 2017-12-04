@@ -44,7 +44,7 @@ public class MenuCadastrar {
 		janela.getContentPane().add(confirmar);
 		
 		janela.setMinimumSize(new Dimension(200, 300));
-		janela.setLayout(new GridLayout(4, 2, 5, 5));
+		janela.setLayout(new GridLayout(6, 2, 3, 3));
 		
 		confirmar.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +53,7 @@ public class MenuCadastrar {
             	
             	alunoNovo = new Aluno(nome,matricula);
             	aluno.cadastrar(alunoNovo);
-            	
+            
             	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);
             	janela.dispose();
             }

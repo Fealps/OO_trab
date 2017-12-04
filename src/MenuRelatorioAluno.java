@@ -13,6 +13,7 @@ public class MenuRelatorioAluno {
 	
 	private static JFrame janela;
 	public static JLabel j1 = null;
+	public static JLabel j2 = null;
 	private static JButton c;
 	
 
@@ -24,17 +25,21 @@ public class MenuRelatorioAluno {
 	
 		janela = new JFrame("Relatorio de alunos");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		c.setText("Fechar");
 		
 		
-		for(int i =0; i < a.alunos.size(); i++) {
+		for(int i = 0; i < a.alunos.size(); i++) {
 			j1 = new JLabel(a.alunos.get(i).getNome().toString());
+			//j2 = new JLabel(a.alunos.get(i).getMatricula().toString());
+			janela.getContentPane().add(j1);
+			//janela.getContentPane().add(j2);
 		}
 		
 		janela.getContentPane().add(j1);
 		janela.getContentPane().add(c);
 		
 		janela.setMinimumSize(new Dimension(200, 300));
-		janela.setLayout(new GridLayout(4, 2, 5, 5));
+		janela.setLayout(new GridLayout(2, 0, 5, 5));
 	
 		
 		
