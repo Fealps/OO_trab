@@ -1,10 +1,13 @@
 import java.util.Scanner;
 
+
+
 public class Principal {
 
 	public static void main(String[] args) {
 		 Menu menu = new Menu();
 		 menu.menuPrincipal();
+		 
 		//Turma t = new Turma("matemática");
 		//Scanner in = new Scanner(System.in);
 		

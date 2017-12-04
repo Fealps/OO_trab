@@ -1,8 +1,10 @@
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
 
 public class Menu {
 
@@ -38,7 +40,20 @@ public class Menu {
 		
 		btn1.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	Aluno.cadastrar(new Aluno());
+            	MenuCadastrar menuC = new MenuCadastrar();
+            	menuC.apresentarGUICadastrar();
+            }
+		});
+		
+		btn2.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            }
+		});
+		
+		btn3.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            
             }
 		});
 
