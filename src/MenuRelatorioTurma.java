@@ -20,7 +20,7 @@ public class MenuRelatorioTurma {
 		janela = new JFrame("Relatorio de alunos");
 		janela.setLayout(new GridLayout(0, 1));
 		janela.pack();
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setSize(300,200);
         janela.setVisible(true);
         janela.setLocationRelativeTo(null);

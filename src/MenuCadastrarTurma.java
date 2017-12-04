@@ -23,7 +23,7 @@ public static void apresentarGUICadastrarTurma (Turma turma){
 		JTFDisciplina = new JTextField();
 		cadastrar = new JButton("cadastrar");
 
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 						
 		
 		janela.getContentPane().add(JLDisciplina);

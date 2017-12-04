@@ -22,7 +22,7 @@ public class MenuMatricularAluno {
 		matricular.setBounds(0, 0, 30, 15);
 		
 		janela.setMinimumSize(new Dimension(300, 200));
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setLayout(new GridLayout(4, 2, 5, 5));
 				
 		

@@ -21,7 +21,7 @@ public class MenuCadastrarAluno {
 	public static void apresentarGUICadastrarAluno (Aluno aluno){
 		
 		janela = new JFrame("Cadastro de alunos");
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JTFnome = new JTextField();
 		JTFmatricula = new JTextField();

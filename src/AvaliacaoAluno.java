@@ -12,5 +12,9 @@ public class AvaliacaoAluno {
 		public void setNota(float nota) {
 			this.nota = nota;
 		}
+		public int size(){
+			// TODO Auto-generated method stub
+			return 0;
+		}
 		
 }

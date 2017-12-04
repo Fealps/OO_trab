@@ -23,12 +23,12 @@ public class MenuRelatorioAluno {
 	public static void apresentarGUIExibir (Aluno a){
 		
 		c = new JButton();
-		t1 = new JLabel("Nome");
+		t1 = new JLabel("Nome ");
 		t2 = new JLabel("Matrícula");
 		janela = new JFrame("Relatorio de alunos");
 		
 	
-		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		c.setText("Fechar");
 		
 		janela.getContentPane().setBackground(Color.ORANGE);
