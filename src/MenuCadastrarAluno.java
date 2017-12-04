@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 import com.sun.imageio.stream.StreamCloser.CloseAction;
 
-public class MenuCadastrar {
+public class MenuCadastrarAluno {
 	
 	static Aluno alunoNovo ;
 	private static JFrame janela;
@@ -22,7 +22,7 @@ public class MenuCadastrar {
 	private static JButton confirmar;
 	
 
-	public static void apresentarGUICadastrar (Aluno aluno){
+	public static void apresentarGUICadastrarAluno (Aluno aluno){
 		
 		janela = new JFrame("Cadastro de alunos");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,15 +1,26 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.swing.JOptionPane;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 public class Turma {
 
 	private String disciplina;
-	private Set<Aluno> alunos;
+	private ArrayList<Aluno> alunos = new ArrayList<>();
+	private ArrayList<Turma> turmas = new ArrayList<>();
 
 	
 	public Turma(String disciplina) {
-		alunos = new HashSet<Aluno>();
+		
+		this.setDisciplina(disciplina);
 	
+	}
+
+	public Turma() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public boolean matricular(Aluno a) {
@@ -30,15 +41,29 @@ public class Turma {
 
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
+		JOptionPane.showMessageDialog(null,disciplina+" cadastrada com sucesso", "Sucesso", JOptionPane.PLAIN_MESSAGE);
+
 	}
 
-	public Set<Aluno> getAlunos() {
+	public ArrayList<Aluno> getAlunos() {
 		return alunos;
 	}
 
-	public void setAlunos(Set<Aluno> alunos) {
+	public void setAlunos(ArrayList<Aluno> alunos) {
 		this.alunos = alunos;
 	}
+
+	public ArrayList<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void cadastrar(Turma t) {
+		this.turmas.add(t);
+		System.out.println("Turma cadastrada com sucesso");
+	}
+	
+	
+	
 
 	
 

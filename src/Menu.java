@@ -11,10 +11,12 @@ public class Menu {
 	private static JFrame janela;
 	private static JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 	static MenuRelatorioAluno menuRA = new MenuRelatorioAluno();
-	static MenuCadastrar menuC = new MenuCadastrar();
+	static MenuCadastrarAluno menuC = new MenuCadastrarAluno();
+	static MenuCadastrarTurma menuT = new MenuCadastrarTurma();
+	static MenuRelatorioTurma menuRT = new MenuRelatorioTurma();
 
 
-	public static void apresentarGUI(Aluno a) {
+	public static void apresentarGUI(Aluno a,Turma t) {
 
 		janela = new JFrame("Gerenciador Acadêmico");
 
@@ -44,7 +46,7 @@ public class Menu {
 		btn1.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {         	
             	
-            	menuC.apresentarGUICadastrar(a);
+            	menuC.apresentarGUICadastrarAluno(a);
             	
             
             }
@@ -62,7 +64,17 @@ public class Menu {
 		
 		btn3.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            
+            	
+            	menuT.apresentarGUICadastrarTurma(t);
+            	
+            }
+		});
+		
+		btn4.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	menuRT.apresentarGUIExibir(t);
+            	
             }
 		});
 

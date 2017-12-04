@@ -98,15 +98,7 @@ public class Aluno {
 			}
 		this.matricula = matricula;
 	}
-	public void exibirAlunos(Aluno a) {
-		
-		for(int i = 0; i < a.alunos.size();i++){
-			
-			
-			
-		}
-		
-	}
+
 
 	/*
 	 * public static Aluno getAlunos() { return alunos; }
