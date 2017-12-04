@@ -66,7 +66,7 @@ public class Aluno {
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public void setNome(String nome) {
@@ -84,7 +84,7 @@ public class Aluno {
 	}
 
 	public String getMatricula() {
-		return matricula;
+		return this.matricula;
 	}
 
 	public void setMatricula(String matricula) {
@@ -96,6 +96,7 @@ public class Aluno {
 				setMatricula(matricula);
 				e.printStackTrace();
 			}
+		this.matricula = matricula;
 	}
 	public void exibirAlunos(Aluno a) {
 		

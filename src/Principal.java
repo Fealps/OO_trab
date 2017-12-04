@@ -9,7 +9,7 @@ public class Principal {
 	     Aluno a = new Aluno();
 		 Menu menu = new Menu();
 		 menu.apresentarGUI(a);
-		 
+		
 		
 	}
 }

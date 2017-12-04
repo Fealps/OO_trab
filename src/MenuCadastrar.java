@@ -27,8 +27,8 @@ public class MenuCadastrar {
 		janela = new JFrame("Cadastro de alunos");
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JTFnome = new JTextField(20);
-		JTFmatricula = new JTextField(10);
+		JTFnome = new JTextField();
+		JTFmatricula = new JTextField();
 		
 		JLnome = new JLabel("Nome:");
 		//JLnome.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -51,7 +51,9 @@ public class MenuCadastrar {
             	String nome = JTFnome.getText();
             	String matricula = JTFmatricula.getText();
             	
-            	alunoNovo = new Aluno(nome,matricula);
+            	alunoNovo = new Aluno();
+            	alunoNovo.setNome(nome);
+            	alunoNovo.setMatricula(matricula);
             	aluno.cadastrar(alunoNovo);
             
             	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);
