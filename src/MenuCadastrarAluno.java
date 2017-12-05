@@ -3,11 +3,14 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 public class MenuCadastrarAluno {
 	
@@ -16,15 +19,24 @@ public class MenuCadastrarAluno {
 	private static JTextField JTFnome, JTFmatricula;
 	private static JLabel JLnome, JLmatricula;
 	private static JButton confirmar;
+	private static MaskFormatter mascaraMatricula;
 	
 
-	public static void apresentarGUICadastrarAluno (Aluno aluno){
+	public static void apresentarGUICadastrarAluno (Aluno aluno) {
 		
 		janela = new JFrame("Cadastro de alunos");
 		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JTFnome = new JTextField();
 		JTFmatricula = new JTextField();
+		
+		try {
+		mascaraMatricula = new MaskFormatter("##/#######");
+		
+		}catch (ParseException exp) {
+			exp.printStackTrace();
+		}
+		JFormattedTextField matricula = new JFormattedTextField(mascaraMatricula);
 		
 		JLnome = new JLabel("Nome:");
 		//JLnome.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -36,7 +48,7 @@ public class MenuCadastrarAluno {
 		janela.getContentPane().add(JLnome);
 		janela.getContentPane().add(JTFnome);
 		janela.getContentPane().add(JLmatricula);
-		janela.getContentPane().add(JTFmatricula);
+		janela.getContentPane().add(matricula);
 		janela.getContentPane().add(confirmar);
 		
 		janela.setMinimumSize(new Dimension(200, 300));
