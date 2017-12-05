@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 
 public class Principal {
 
@@ -8,8 +5,8 @@ public class Principal {
 		
 	     Aluno a = new Aluno();
 	     Turma t = new Turma();
-		 Menu menu = new Menu();
-		 menu.apresentarGUI(a,t);
+		
+		 Menu.apresentarGUI(a,t);
 		
 		
 	}

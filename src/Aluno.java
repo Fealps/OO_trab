@@ -1,10 +1,5 @@
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
-
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import exceptionpac.BlankException;
 

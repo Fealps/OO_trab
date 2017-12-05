@@ -1,10 +1,8 @@
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 
 import javax.swing.JOptionPane;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 public class Turma {
 
