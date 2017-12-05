@@ -59,7 +59,9 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma){
 			JToggleButton btn = new JToggleButton(turma.getTurmas().get(i).getDisciplina().toString());
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					//Açoes dos botoes
+					
+					
+										
 				}
 			});
 			bg.add(btn);
@@ -77,12 +79,27 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma){
 			public void actionPerformed(ActionEvent e) {
             	String nome = JTFnome.getText();
             	float peso = Float.parseFloat(JTFpeso.getText());
-            
+            	int k = 0;
             	aval = new Avaliacao();
-            	aval.setNome(nome);
-            	aval.setPeso(peso);
-            	aval.criarAvaliacao();
+            	
+            	for(int j = 0;j < buttons.length;j++) {
+						
+					if(buttons[j].isSelected()) {
+						aval.setNome(nome);
+						aval.setPeso(peso);
+						aval.criarAvaliacao();
+						
+						k = j;
+						
+						System.out.println("O botão está selecionado");
+					}
+								
+				}
+            	
+            	System.out.println(turma.getTurmas().get(k).getDisciplina().toString());
             	janela.dispose();
+            
+
             }
 		});
 		

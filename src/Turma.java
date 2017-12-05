@@ -65,6 +65,15 @@ public class Turma {
 		
 		return sizeOfTurma;
 	}
+
+	public Avaliacao getAval() {
+		return aval;
+	}
+
+	public void setAval(Avaliacao aval) {
+		this.aval = aval;
+	}
+	
 	
 	
 	
