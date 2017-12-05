@@ -9,6 +9,7 @@ public class Turma {
 	private String disciplina;
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	private ArrayList<Turma> turmas = new ArrayList<>();
+	private int sizeOfTurma = 0;
 	
 	public Turma(String disciplina) {
 		
@@ -56,7 +57,13 @@ public class Turma {
 
 	public void cadastrar(Turma t) {
 		this.turmas.add(t);
+		sizeOfTurma++;
 		System.out.println("Turma cadastrada com sucesso");
+	}
+
+	public int getSize() {
+		
+		return sizeOfTurma;
 	}
 	
 	

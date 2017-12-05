@@ -5,6 +5,7 @@ public class AvaliacaoAluno {
 		public boolean cadastrarNota(Aluno a, Avaliacao av) {
 			return false;
 			}
+		
 		public float getNota() {
 			return nota;
 		}
@@ -13,7 +14,6 @@ public class AvaliacaoAluno {
 			this.nota = nota;
 		}
 		public int size(){
-			// TODO Auto-generated method stub
 			return 0;
 		}
 		

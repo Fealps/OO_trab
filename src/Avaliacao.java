@@ -2,8 +2,9 @@
 public class Avaliacao {
 	
 	private		String nome;
-	private		float valor,
-				  	  peso;
+	private 	Turma  disciplina;
+	private		float  peso;
+	
 	static private Avaliacao avaliacoes;
 	
 	public static Avaliacao criarAvaliacao(){
@@ -21,12 +22,7 @@ public class Avaliacao {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public float getValor() {
-		return valor;
-	}
-	public void setValor(float valor) {
-		this.valor = valor;
-	}
+
 	public float getPeso() {
 		return peso;
 	}

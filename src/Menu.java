@@ -6,15 +6,18 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
+
 public class Menu {
 	
 	private static JFrame janela;
 	private static JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
-	static MenuRelatorioAluno menuRA = new MenuRelatorioAluno();
-	static MenuCadastrarAluno menuC = new MenuCadastrarAluno();
-	static MenuCadastrarTurma menuT = new MenuCadastrarTurma();
-	static MenuRelatorioTurma menuRT = new MenuRelatorioTurma();
-	static MenuMatricularAluno menuMA = new MenuMatricularAluno();
+	
+	static MenuRelatorioAluno  	  menuRA  = new MenuRelatorioAluno();
+	static MenuCadastrarAluno  	  menuC   = new MenuCadastrarAluno();
+	static MenuCadastrarTurma     menuT   = new MenuCadastrarTurma();
+	static MenuRelatorioTurma     menuRT  = new MenuRelatorioTurma();
+	static MenuMatricularAluno	  menuMA  = new MenuMatricularAluno();
+	static MenuCadastrarAvaliacao menuCA  = new MenuCadastrarAvaliacao();
 
 
 	public static void apresentarGUI(Aluno a,Turma t) {
@@ -45,46 +48,67 @@ public class Menu {
 		janela.setLayout(new GridLayout(4, 2, 5, 5));
 		
 		btn1.addActionListener( new ActionListener() {
+			
             public void actionPerformed(ActionEvent e) {         	
-            	
             	menuC.apresentarGUICadastrarAluno(a);
-            	
-            
             }
+            
 		});
 		
 		btn2.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	
-    
-            	menuRA.apresentarGUIExibir(a);
-            
-            	
+			
+            public void actionPerformed(ActionEvent e) {            	    
+            	menuRA.apresentarGUIExibir(a);                     	
             }
+            
 		});
 		
 		btn3.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	
-            	menuT.apresentarGUICadastrarTurma(t);
-            	
+			
+            public void actionPerformed(ActionEvent e) {            	
+            	menuT.apresentarGUICadastrarTurma(t);            	
             }
+            
 		});
 		
 		btn4.addActionListener( new ActionListener() {
+			
             public void actionPerformed(ActionEvent e) {
-            	
-            	menuRT.apresentarGUIExibir(t);
+            	menuRT.apresentarGUIExibir(t);	
+            }
+            
+		});
+		
+		btn5.addActionListener( new ActionListener() {
+			
+            public void actionPerformed(ActionEvent e) {         	
+            	menuCA.apresentarGUICadastrarAvaliacao(t);
+            }
+            
+		});
+		
+		btn6.addActionListener( new ActionListener() {
+			
+            public void actionPerformed(ActionEvent e) {         	
             	
             }
+            
 		});
 		
 		btn7.addActionListener( new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	
+            
+			public void actionPerformed(ActionEvent e) {
             	menuMA.apresentarGUIMatricularAluno(a,t);
+            }
+            
+		});
+		
+		btn8.addActionListener( new ActionListener() {
+			
+            public void actionPerformed(ActionEvent e) {         	
             	
             }
+            
 		});
 
 		janela.pack();
