@@ -14,6 +14,7 @@ public class Menu {
 	static MenuCadastrarAluno menuC = new MenuCadastrarAluno();
 	static MenuCadastrarTurma menuT = new MenuCadastrarTurma();
 	static MenuRelatorioTurma menuRT = new MenuRelatorioTurma();
+	static MenuMatricularAluno menuMA = new MenuMatricularAluno();
 
 
 	public static void apresentarGUI(Aluno a,Turma t) {
@@ -74,6 +75,14 @@ public class Menu {
             public void actionPerformed(ActionEvent e) {
             	
             	menuRT.apresentarGUIExibir(t);
+            	
+            }
+		});
+		
+		btn7.addActionListener( new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	
+            	menuMA.apresentarGUIMatricularAluno(a,t);
             	
             }
 		});

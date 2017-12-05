@@ -11,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import com.sun.imageio.stream.StreamCloser.CloseAction;
-
 public class MenuCadastrarAluno {
 	
 	static Aluno alunoNovo ;

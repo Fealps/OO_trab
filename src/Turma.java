@@ -11,7 +11,6 @@ public class Turma {
 	private String disciplina;
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	private ArrayList<Turma> turmas = new ArrayList<>();
-
 	
 	public Turma(String disciplina) {
 		
