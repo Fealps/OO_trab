@@ -2,7 +2,6 @@
 public class Avaliacao {
 	
 	private		String nome;
-	private 	Turma  disciplina;
 	private		float  peso;
 	
 	static private Avaliacao avaliacoes;
