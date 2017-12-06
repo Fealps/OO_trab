@@ -61,10 +61,10 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 			JToggleButton btn = new JToggleButton(turma.getTurmas().get(i).getDisciplina().toString());
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					
-						
+
 				}
 			});
+			
 			bg.add(btn);
 			
 			janela.getContentPane().add(btn);
@@ -72,6 +72,7 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 		}
 		JLnome = new JLabel("");
 		janela.getContentPane().add(JLnome);
+		
 		confirmar = new JButton("cadastrar");
 		janela.getContentPane().add(confirmar);
        
@@ -97,8 +98,11 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 								
 				}
             	
-            	turma.getTurmas().get(k).setAval(a);
-            	System.out.println(turma.getTurmas().get(k).getAval().getNome() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
+            	turma.getTurmas().get(k).getAval().criarAvaliacao(a);
+            	for(int i =0; i < turma.getTurmas().get(k).getAval().getSize(); i++) {
+            		System.out.println(turma.getTurmas().get(k).getAval().getAvaliacoes().get(i).getNome().toString() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
+            		
+            	}
             	janela.dispose();         
             	
             	//System.out.println(turma.getTurmas().get(k).getDisciplina().toString());

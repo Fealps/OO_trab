@@ -5,8 +5,7 @@ public class Avaliacao {
 	private String nome;
 	private float peso;
 	private static int sizeOfAval = 0;
-
-	static private ArrayList<Avaliacao> avaliacoes;
+	static private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
 
 	public Avaliacao(String nome2, float peso2) {
 		this.setNome(nome2);
@@ -50,12 +49,11 @@ public class Avaliacao {
 	}
 
 	public static ArrayList<Avaliacao> getAvaliacoes() {
-
 		return avaliacoes;
 	}
 
-	public static void setAvaliacoes(ArrayList<Avaliacao> avaliacoes) {
-		Avaliacao.avaliacoes = avaliacoes;
+	public static void setAvaliacoes(ArrayList<Avaliacao> a) {
+		Avaliacao.avaliacoes = a;
 	}
 
 	public int getSize() {
