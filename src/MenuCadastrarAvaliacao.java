@@ -31,6 +31,7 @@ public class MenuCadastrarAvaliacao {
 
 	
 public static void apresentarGUICadastrarAvaliacao (Turma turma) {
+		
 		size = turma.getSize();
 		buttons = new JToggleButton[size];
 		janela = new JFrame("Cadastro de avaliacoes");
@@ -57,7 +58,6 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 		for (int i = 0; i < buttons.length; ++i)
 		{
 			JLbotao = new JLabel(turma.getTurmas().get(i).getDisciplina().toString());
-
 			JToggleButton btn = new JToggleButton(turma.getTurmas().get(i).getDisciplina().toString());
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {

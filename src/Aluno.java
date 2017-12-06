@@ -3,6 +3,7 @@ import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
 
 import exceptionpac.BlankException;
+import exceptionpac.WrongFormatException;
 
 public class Aluno {
 
@@ -69,14 +70,21 @@ public class Aluno {
 			try {
 				throw new BlankException("O nome não pode ser em branco!");
 			} catch (BlankException e) {
-				JOptionPane.showMessageDialog(null, "Nome em branco nao e permitido. Insira o nome novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
-			
+				JOptionPane.showMessageDialog(null, "Nome em branco nao e permitido. Insira o nome novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);			
 				this.setError(true);
 				e.printStackTrace();
 			}
-		}
+		}else if(nome.matches(".*\\d+.*")) {
+			try {
+				throw new WrongFormatException("Nome invalido");
+			} catch(WrongFormatException e) {
+				JOptionPane.showMessageDialog(null, "Formato invalido. Por favor Insira o nome novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);			
 
-		this.nome = nome;
+				this.setError(true);
+				e.printStackTrace();
+			}
+		}else
+			this.nome = nome;
 	}
 
 	public String getMatricula() {
@@ -84,15 +92,16 @@ public class Aluno {
 	}
 
 	public void setMatricula(String matricula) {
-		if (matricula.equals("  /       "))
+		if (matricula.equals("  /       ")) {
 			try {
-				throw new BlankException("A matrícula não pode estar vazia");
-			} catch (BlankException e) {
-				JOptionPane.showMessageDialog(null, "Matriculas em branco nao sao permitidas. Insira a matricula novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
+				throw new WrongFormatException("A matrícula esta incorreta");
+			} catch (WrongFormatException e) {
+				JOptionPane.showMessageDialog(null, "Formato da matricula incorreto. Por favor insira a matricula novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
 				this.setError(true);
 				e.printStackTrace();
 			 }
-		this.matricula = matricula;
+		}else 
+			this.matricula = matricula;
 	}
 		
 	public boolean getError() {
