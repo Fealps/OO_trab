@@ -56,6 +56,7 @@ public class MenuCadastrarAluno {
 		janela.getContentPane().add(confirmar);
 		
 		janela.setMinimumSize(new Dimension(200, 300));
+		//janela.setLayout(new GridLayout(6, 2, 3, 3));
 		janela.setLayout(new GridLayout(6, 2, 3, 3));
 		
 		confirmar.addActionListener( new ActionListener() {
