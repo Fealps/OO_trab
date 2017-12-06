@@ -18,7 +18,7 @@ public class Avaliacao {
 
 	public void criarAvaliacao(Avaliacao a) {
 
-		sizeOfAval ++;
+		sizeOfAval++;
 		this.avaliacoes.add(a);
 		System.out.println("Avaliacao cadastrada com sucesso");
 	}
@@ -59,7 +59,7 @@ public class Avaliacao {
 
 	public int getSize() {
 		
-		return sizeOfAval;
+		return this.sizeOfAval;
 	}
 
 }
