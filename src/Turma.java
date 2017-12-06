@@ -6,15 +6,27 @@ import javax.swing.JOptionPane;
 
 public class Turma {
 	private Avaliacao aval = new Avaliacao();
+	private int vagas;
 	private String disciplina;
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	private ArrayList<Turma> turmas = new ArrayList<>();
 	private int sizeOfTurma = 0;
 	
-	public Turma(String disciplina) {
+	public Turma(String disciplina, int vag) {
 		
 		this.setDisciplina(disciplina);
-	
+		this.setVagas(vag);
+	}
+
+	public int getVagas() {
+		return vagas;
+	}
+	public void reduzVagas() {
+		this.vagas--;
+	}
+
+	public void setVagas(int vagas) {
+		this.vagas = vagas;
 	}
 
 	public Turma() {
