@@ -100,15 +100,17 @@ public class MenuMatricularAluno {
 				System.out.println("Aluno nome: "+m);
 				
 				for(int i = 0; i < a.alunos.size();i++) {					
-				
+					System.out.println(t.getTurmas().get(k).getVagas());
 					if(a.alunos.get(i).getNome().toString().equals(m)){
 						
 						t.getTurmas().get(k).matricular(a.alunos.get(i));
+						t.getTurmas().get(k).reduzVagas();
 						//System.out.println("Turma selecionada:"+t.getTurmas().get(k).getDisciplina());
 						System.out.println("item selecionado: " +b);
 
 						
 					}
+					System.out.println(t.getTurmas().get(k).getVagas());
 					//System.out.println("Aluno nome:"+a.alunos.get(i).getNome().toString());
 					System.out.println("TESTE 2-ÍNDICE DO NÚMERO SELECIONADO: "+b);
 					//System.out.println("item selecionado" +b);
