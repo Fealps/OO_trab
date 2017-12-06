@@ -91,7 +91,7 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 					if(buttons[j].isSelected()) {
 						
 						 a = new Avaliacao(nome,peso);
-						k = j;
+						 k = j;
 						
 						System.out.println("O botão está selecionado");
 					}
@@ -99,10 +99,9 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 				}
             	
             	turma.getTurmas().get(k).getAval().criarAvaliacao(a);
-            	for(int i =0; i < turma.getTurmas().get(k).getAval().getSize(); i++) {
-            		System.out.println(turma.getTurmas().get(k).getAval().getAvaliacoes().get(i).getNome().toString() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
-            		
-            	}
+
+            		//System.out.println(turma.getTurmas().get(k).getAval().getAvaliacoes().get(k).getNome().toString() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
+
             	janela.dispose();         
             	
             	//System.out.println(turma.getTurmas().get(k).getDisciplina().toString());

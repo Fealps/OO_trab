@@ -20,11 +20,11 @@ public class MenuRelatorioTurma {
 
 	public static void apresentarGUIExibir(Turma t) {
 
-		janela = new JFrame("Relatorio de alunos");
+		janela = new JFrame("Relatorio de Turmas");
 		janela.setLayout(new GridLayout(0, 2));
 		janela.pack();
 		// janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		janela.setSize(300, 200);
+		janela.setSize(400, 200);
 		janela.setVisible(true);
 		janela.setLocationRelativeTo(null);
 

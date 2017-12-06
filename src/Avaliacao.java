@@ -4,8 +4,8 @@ public class Avaliacao {
 
 	private String nome;
 	private float peso;
-	private static int sizeOfAval = 0;
-	static private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
+	private int sizeOfAval = 0;
+	private ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
 
 	public Avaliacao(String nome2, float peso2) {
 		this.setNome(nome2);
@@ -16,10 +16,11 @@ public class Avaliacao {
 
 	}
 
-	public static void criarAvaliacao(Avaliacao a) {
+	public void criarAvaliacao(Avaliacao a) {
 
-		avaliacoes.add(a);
 		sizeOfAval ++;
+		this.avaliacoes.add(a);
+		System.out.println("Avaliacao cadastrada com sucesso");
 	}
 
 	public void deletarAvalicao(Avaliacao a) {
@@ -48,12 +49,12 @@ public class Avaliacao {
 		this.peso = peso;
 	}
 
-	public static ArrayList<Avaliacao> getAvaliacoes() {
-		return avaliacoes;
+	public ArrayList<Avaliacao> getAvaliacoes() {
+		return this.avaliacoes;
 	}
 
-	public static void setAvaliacoes(ArrayList<Avaliacao> a) {
-		Avaliacao.avaliacoes = a;
+	public void setAvaliacoes(ArrayList<Avaliacao> a) {
+		this.avaliacoes = a;
 	}
 
 	public int getSize() {
