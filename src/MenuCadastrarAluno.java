@@ -66,10 +66,10 @@ public class MenuCadastrarAluno {
             	alunoNovo = new Aluno();
             	alunoNovo.setNome(nome);
             	alunoNovo.setMatricula(matricula);
-            	aluno.cadastrar(alunoNovo);
-            
-            	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);
-            	janela.dispose();
+            	if(!alunoNovo.getError()) {
+            		aluno.cadastrar(alunoNovo);
+            		janela.dispose();
+            	}
             }
 		});
 		

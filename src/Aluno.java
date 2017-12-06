@@ -6,6 +6,7 @@ import exceptionpac.BlankException;
 
 public class Aluno {
 
+	private boolean error = false;
 	private String nome;
 	private String matricula;
 	static ArrayList<Aluno> alunos = new ArrayList<>();
@@ -25,8 +26,6 @@ public class Aluno {
 
 
 	static void cadastrar(Aluno a) {
-		
-		
 		alunos.add(a);
 		
 		String message = 
@@ -39,7 +38,7 @@ public class Aluno {
 	}
 
 	static Aluno pesquisar(String n) {
-
+		
 		Aluno resposta = null;
 
 		for (int i = 0; i < alunos.size(); i++) {
@@ -70,8 +69,9 @@ public class Aluno {
 			try {
 				throw new BlankException("O nome não pode ser em branco!");
 			} catch (BlankException e) {
-				nome = JOptionPane.showInputDialog("Informe o nome novamente: ");
-				setNome(nome);
+				JOptionPane.showMessageDialog(null, "Nome em branco nao e permitido. Insira o nome novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
+			
+				this.setError(true);
 				e.printStackTrace();
 			}
 		}
@@ -89,13 +89,20 @@ public class Aluno {
 				throw new BlankException("A matrícula não pode estar vazia");
 			} catch (BlankException e) {
 				JOptionPane.showMessageDialog(null, "Matriculas em branco nao sao permitidas. Insira a matricula novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
-				//System.exit(-1);
-				setMatricula(matricula);
+				this.setError(true);
 				e.printStackTrace();
 			 }
 		this.matricula = matricula;
 	}
 		
+	public boolean getError() {
+		return error;
+	}
+	
+	
+	public void setError(boolean error) {
+		this.error = error;
+	}
 	/*
 	 * public static Aluno getAlunos() { return alunos; }
 	 * 
