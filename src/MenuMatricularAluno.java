@@ -3,6 +3,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -71,7 +73,7 @@ public class MenuMatricularAluno {
 		alunosListJ.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		alunosListJ.setVisibleRowCount(5);
 		
-		alunoList.addActionListener(new ActionListener() {
+		materiaList.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -87,7 +89,22 @@ public class MenuMatricularAluno {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				alunosListJ.setListData(alunosListJ.getSelectedIndex());
+				k = materiaList.getSelectedIndex();
+				List<String> n = alunosListJ.getSelectedValuesList();
+				
+				for(int i = 0; i < a.alunos.size();i++) {					
+				
+					if(a.alunos.get(i).equals(n.get(i).toString())){
+						
+						t.getTurmas().get(k).matricular(a.alunos.get(i));
+						System.out.println("O aluno foi matriculado aqui..."+t.getTurmas().get(k).getAlunos().get(i).getNome());
+						
+					}
+				}
+				
+				System.out.println("Teste:"+n);
+				//System.out.println("Alunos cadastrado em "+t.getTurmas().get(k).getDisciplina().toString());
+				
 				janela.dispose();
 			}
 		});
