@@ -31,7 +31,7 @@ public class Aluno {
 		
 		String message = 
 				String.format("O aluno %s com a matrícula %s"
-						+ " foi matriculado com sucesso ", a.getNome(),a.getMatricula());
+						+ " foi matriculado com sucesso \n", a.getNome(),a.getMatricula());
 		
 		JOptionPane.showMessageDialog(null, message,"Cadastro de alunos", JOptionPane.PLAIN_MESSAGE);
 	System.out.printf("O aluno %s com a matrícula %s"

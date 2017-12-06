@@ -51,7 +51,7 @@ public class Turma {
 
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
-		JOptionPane.showMessageDialog(null,disciplina+" cadastrada com sucesso", "Sucesso", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null,disciplina+" cadastrada com sucesso", "Sucesso ", JOptionPane.PLAIN_MESSAGE);
 
 	}
 
@@ -70,7 +70,7 @@ public class Turma {
 	public void cadastrar(Turma t) {
 		this.turmas.add(t);
 		sizeOfTurma++;
-		System.out.println("Turma cadastrada com sucesso");
+		System.out.println("Turma cadastrada com sucesso\n");
 	}
 
 	public int getSize() {

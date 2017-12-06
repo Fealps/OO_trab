@@ -99,8 +99,9 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 				}
             	
             	turma.getTurmas().get(k).getAval().criarAvaliacao(a);
+            	
 
-            		//System.out.println(turma.getTurmas().get(k).getAval().getAvaliacoes().get(k).getNome().toString() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
+            	System.out.println("avaliação "+a.getNome()+" está na turma"+turma.getTurmas().get(k).getDisciplina().toString()); 
 
             	janela.dispose();         
             	

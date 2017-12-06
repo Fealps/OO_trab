@@ -36,21 +36,25 @@ public class MenuRelatorioTurma {
 		t1 = new JLabel("Nome");
 		t2 = new JLabel("Avaliações cadastradas");
 		t3 = new JLabel("Alunos matriculados");
-		
+
 		avaList = new JComboBox<String>();
 
 		janela.getContentPane().add(t1);
 		janela.getContentPane().add(t2);
 		janela.getContentPane().add(t3);
-		
+
 		for (int i = 0; i < t.getTurmas().size(); i++) {
-			
+
 			j1 = new JLabel(t.getTurmas().get(i).getDisciplina().toString());
 			janela.getContentPane().add(j1);
 			avaList = new JComboBox<String>();
+			try {
 				for (int j = 0; j < t.getTurmas().get(i).getAval().getSize(); j++) {
 					avaList.addItem(t.getTurmas().get(i).getAval().getAvaliacoes().get(j).getNome().toString());
 				}
+			} catch (NullPointerException e) {
+				System.out.println("Está vazio");
+			}
 			janela.getContentPane().add(avaList);
 			j3 = new JLabel();
 			janela.getContentPane().add(j3);
