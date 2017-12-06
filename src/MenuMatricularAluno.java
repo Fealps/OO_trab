@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -32,9 +33,8 @@ public class MenuMatricularAluno {
 		alunoList = new JComboBox<String>();
 		materiaList = new JComboBox<String>();
 		
-		 String[] colorNames = {"Black", "Blue", "Cyan",
-				"Dark Gray", "Gray", "Green", "Light Gray", "Magenta",
-				"Orange", "Pink", "Red", "White", "Yellow"};
+		DefaultListModel model = new DefaultListModel();        
+		
 		
 
 		t1 = new JLabel("Nome");
@@ -48,7 +48,7 @@ public class MenuMatricularAluno {
 		janela.setLayout(new GridLayout(4, 2, 5, 5));
 
 		for (int i = 0; i < a.alunos.size(); i++) {
-			lista.add(a.alunos.get(i).getNome().toString());
+			model.addElement(a.alunos.get(i).getNome().toString());
 			alunoList.addItem(a.alunos.get(i).getNome().toString());
 			
 		}
@@ -58,16 +58,19 @@ public class MenuMatricularAluno {
 			materiaList.addItem(t.getTurmas().get(i).getDisciplina().toString());
 
 		}
-		//alunosListJ.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		//alunosListJ.setVisibleRowCount(5);
-		alunosListJ = new JList<String>((ListModel<String>) lista);
+		
+		alunosListJ = new JList<String>(model);
 		
 		janela.getContentPane().add(t1);
 		janela.getContentPane().add(t2);
-		janela.getContentPane().add(alunoList);
-		janela.getContentPane().add(materiaList);
 		janela.getContentPane().add(new JScrollPane(alunosListJ));
+		//janela.getContentPane().add(alunoList);
+		janela.getContentPane().add(materiaList);
 		janela.getContentPane().add(matricular);
+		
+		alunosListJ.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		alunosListJ.setVisibleRowCount(5);
+		
 		alunoList.addActionListener(new ActionListener() {
 
 			@Override
@@ -78,23 +81,13 @@ public class MenuMatricularAluno {
 			}
 		});
 		
-		materiaList.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				k = materiaList.getSelectedIndex();
-				
-				System.out.println(materiaList.getSelectedItem().toString());
-
-			}
-		});
-
+		
 		matricular.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				alunosListJ.setListData(alunosListJ.getSelectedIndex());
 				janela.dispose();
 			}
 		});

@@ -11,7 +11,7 @@ public class Avaliacao {
 		this.setNome(nome2);
 		this.setPeso(peso2);
 	}
-
+kkkk
 	public Avaliacao() {
 
 	}

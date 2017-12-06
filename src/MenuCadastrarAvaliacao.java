@@ -76,7 +76,7 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 		confirmar = new JButton("cadastrar");
 		janela.getContentPane().add(confirmar);
        
-        
+   hh     
 		confirmar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
             	String nome = JTFnome.getText();
