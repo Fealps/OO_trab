@@ -14,13 +14,15 @@ import javax.swing.text.MaskFormatter;
 
 public class MenuCadastrarAluno {
 	
+//	private static final String TamanhoFixoText = null;
 	static Aluno alunoNovo ;
 	private static JFrame janela;
 	private static JTextField JTFnome, JTFmatricula;
 	private static JLabel JLnome, JLmatricula;
 	private static JButton confirmar;
 	private static MaskFormatter mascaraMatricula;
-	
+	private static Object TamanhoFixoText;
+	private int tamMax;
 
 	public static void apresentarGUICadastrarAluno (Aluno aluno) {
 		
@@ -35,8 +37,10 @@ public class MenuCadastrarAluno {
 		
 		}catch (ParseException exp) {
 			exp.printStackTrace();
+            mascaraMatricula.setPlaceholderCharacter('_');
+
 		}
-		JFormattedTextField matricula = new JFormattedTextField(mascaraMatricula);
+		JFormattedTextField matriculaF = new JFormattedTextField(mascaraMatricula);
 		
 		JLnome = new JLabel("Nome:");
 		//JLnome.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -48,7 +52,7 @@ public class MenuCadastrarAluno {
 		janela.getContentPane().add(JLnome);
 		janela.getContentPane().add(JTFnome);
 		janela.getContentPane().add(JLmatricula);
-		janela.getContentPane().add(matricula);
+		janela.getContentPane().add(matriculaF);
 		janela.getContentPane().add(confirmar);
 		
 		janela.setMinimumSize(new Dimension(200, 300));
@@ -58,7 +62,7 @@ public class MenuCadastrarAluno {
             @SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent e) {
             	String nome = JTFnome.getText();
-            	String matricula = JTFmatricula.getText();
+            	String matricula = matriculaF.getText();
             	
             	alunoNovo = new Aluno();
             	alunoNovo.setNome(nome);
@@ -74,7 +78,6 @@ public class MenuCadastrarAluno {
 		janela.pack();
 		janela.setVisible(true);
 		
-	
 		
 	}
 	
