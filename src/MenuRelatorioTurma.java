@@ -45,10 +45,7 @@ public class MenuRelatorioTurma {
 			// j2 = new JLabel (t.getTurmas().get(i).getAval().getNome());
 			try {
 				for (int j = 0; j < t.getTurmas().get(i).getAval().getSize(); j++) {
-
-					avaList.addItem(t.getTurmas().get(i).getAval().getAvaliacoes().get(j).getNome());
-				
-
+					avaList.addItem(t.getTurmas().get(i).getAval().getAvaliacoes().get(j).getNome().toString());
 				}
 			} catch (NullPointerException e) {
 				System.out.println("Está vazio");

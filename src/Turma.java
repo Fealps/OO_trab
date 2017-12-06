@@ -70,8 +70,8 @@ public class Turma {
 		return aval;
 	}
 
-	public void setAval(Avaliacao aval) {
-		this.aval = aval;
+	public void setAval(Avaliacao a) {
+		this.aval = a;
 	}
 	
 	
