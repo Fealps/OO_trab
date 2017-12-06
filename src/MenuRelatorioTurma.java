@@ -18,7 +18,7 @@ public class MenuRelatorioTurma {
 	public static JLabel t3 = null;
 	private static JButton c;
 	private static JComboBox<String> avaList;
-	private static String[] lista;
+
 
 	public static void apresentarGUIExibir(Turma t) {
 

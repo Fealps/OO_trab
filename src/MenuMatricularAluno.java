@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
@@ -107,8 +108,9 @@ public class MenuMatricularAluno {
 						t.getTurmas().get(k).reduzVagas();
 						//System.out.println("Turma selecionada:"+t.getTurmas().get(k).getDisciplina());
 						System.out.println("item selecionado: " +b);
-
+						String message = "Aluno:"+a.alunos.get(i).getNome()+" matriculado em:"+t.getTurmas().get(k).getDisciplina();		
 						
+						JOptionPane.showMessageDialog(null, message, "Aluno cadastrado", JOptionPane.PLAIN_MESSAGE);
 					}
 					System.out.println(t.getTurmas().get(k).getVagas());
 					//System.out.println("Aluno nome:"+a.alunos.get(i).getNome().toString());
