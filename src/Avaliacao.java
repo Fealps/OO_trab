@@ -1,19 +1,32 @@
+import java.util.ArrayList;
 
 public class Avaliacao {
 	
 	private		String nome;
 	private		float  peso;
 	
-	static private Avaliacao avaliacoes;
+	static private ArrayList<Avaliacao> avaliacoes;
 	
-	public static Avaliacao criarAvaliacao(){
-		return avaliacoes;
+	public Avaliacao(String nome2, float peso2) {
+		this.setNome(nome2);
+		this.setPeso(peso2);
 	}
-	public boolean deletarAvalicao() {
-		return true;
+	public Avaliacao() {
+		
 	}
-	public Avaliacao pesquisarAvaliacao() {
-		return avaliacoes;
+
+	public static void criarAvaliacao(Avaliacao a){
+		
+		avaliacoes.add(a);
+	}
+	
+	public void deletarAvalicao(Avaliacao a) {
+		this.avaliacoes.remove(a);
+	}
+	public String pesquisarAvaliacao(String a) {
+		
+		return a;
+	
 	}
 	public String getNome() {
 		return nome;
@@ -28,11 +41,14 @@ public class Avaliacao {
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-	public static Avaliacao getAvaliacoes() {
+
+	public static ArrayList<Avaliacao> getAvaliacoes() {
 		return avaliacoes;
 	}
-	public static void setAvaliacoes(Avaliacao avaliacoes) {
+
+	public static void setAvaliacoes(ArrayList<Avaliacao> avaliacoes) {
 		Avaliacao.avaliacoes = avaliacoes;
 	}
+	
 	
 }
