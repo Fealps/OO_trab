@@ -18,6 +18,7 @@ public class Menu {
 	static MenuRelatorioTurma     menuRT  = new MenuRelatorioTurma();
 	static MenuMatricularAluno	  menuMA  = new MenuMatricularAluno();
 	static MenuCadastrarAvaliacao menuCA  = new MenuCadastrarAvaliacao();
+	static Avaliacao aval;
 
 
 	public static void apresentarGUI(Aluno a,Turma t) {
@@ -65,8 +66,9 @@ public class Menu {
 		
 		btn3.addActionListener( new ActionListener() {
 			
-            public void actionPerformed(ActionEvent e) {            	
-            	menuT.apresentarGUICadastrarTurma(t);            	
+            public void actionPerformed(ActionEvent e) { 
+            	menuT.apresentarGUICadastrarTurma(t);
+            	
             }
             
 		});
@@ -81,7 +83,8 @@ public class Menu {
 		
 		btn5.addActionListener( new ActionListener() {
 			
-            public void actionPerformed(ActionEvent e) {         	
+            public void actionPerformed(ActionEvent e) {  
+            	
             	menuCA.apresentarGUICadastrarAvaliacao(t);
             }
             

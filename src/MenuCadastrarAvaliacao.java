@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.*;
 import javax.swing.ButtonGroup;
@@ -14,9 +15,10 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.text.MaskFormatter;
 
 public class MenuCadastrarAvaliacao {
-	static Avaliacao aval ;
+	//static Avaliacao avalNova ;
 	private Turma turma;
 	private static JPanel p = new JPanel(new BorderLayout());
 	private static JFrame janela;
@@ -27,8 +29,9 @@ public class MenuCadastrarAvaliacao {
 	private static int size;
 	private static JToggleButton buttons[];
 
+
 	
-public static void apresentarGUICadastrarAvaliacao (Turma turma){
+public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 		size = turma.getSize();
 		buttons = new JToggleButton[size];
 		janela = new JFrame("Cadastro de avaliacoes");
@@ -80,15 +83,15 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma){
             	String nome = JTFnome.getText();
             	float peso = Float.parseFloat(JTFpeso.getText());
             	int k = 0;
-            	aval = new Avaliacao();
+            	
+            	Avaliacao a = null ;
+            	
             	
             	for(int j = 0;j < buttons.length;j++) {
 						
 					if(buttons[j].isSelected()) {
-						aval.setNome(nome);
-						aval.setPeso(peso);
-						aval.criarAvaliacao();
 						
+						 a = new Avaliacao(nome,peso);
 						k = j;
 						
 						System.out.println("O botão está selecionado");
@@ -96,8 +99,12 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma){
 								
 				}
             	
-            	System.out.println(turma.getTurmas().get(k).getDisciplina().toString());
-            	janela.dispose();
+            	turma.getTurmas().get(k).setAval(a);
+            	System.out.println(turma.getTurmas().get(k).getAval().getNome() + " cadastrada em " + turma.getTurmas().get(k).getDisciplina().toString()); 
+            	janela.dispose();         
+            	
+            	//System.out.println(turma.getTurmas().get(k).getDisciplina().toString());
+            	//janela.dispose();
             
 
             }
