@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 
 public class Turma {
-	private Avaliacao aval;
+	private Avaliacao aval = new Avaliacao();
 	private String disciplina;
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	private ArrayList<Turma> turmas = new ArrayList<>();
@@ -70,8 +70,8 @@ public class Turma {
 		return aval;
 	}
 
-	public void setAval(Avaliacao aval) {
-		this.aval = aval;
+	public void setAval(Avaliacao a) {
+		this.aval = a;
 	}
 	
 	

@@ -59,7 +59,6 @@ public class MenuCadastrarAluno {
 		janela.setLayout(new GridLayout(6, 2, 3, 3));
 		
 		confirmar.addActionListener( new ActionListener() {
-            @SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent e) {
             	String nome = JTFnome.getText();
             	String matricula = matriculaF.getText();
