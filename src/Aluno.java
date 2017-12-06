@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 
 import exceptionpac.BlankException;
 
@@ -83,19 +84,18 @@ public class Aluno {
 	}
 
 	public void setMatricula(String matricula) {
-		if (matricula.equals(""))
+		if (matricula.equals("  /       "))
 			try {
 				throw new BlankException("A matrícula não pode estar vazia");
 			} catch (BlankException e) {
-				matricula = JOptionPane.showInputDialog("Informe a matrícula novamente");
+				JOptionPane.showMessageDialog(null, "Matriculas em branco nao sao permitidas. Insira a matricula novamente.", "ATENCAO", JOptionPane.ERROR_MESSAGE);
+				//System.exit(-1);
 				setMatricula(matricula);
 				e.printStackTrace();
-			}
+			 }
 		this.matricula = matricula;
 	}
-	
-
-
+		
 	/*
 	 * public static Aluno getAlunos() { return alunos; }
 	 * 

@@ -27,6 +27,13 @@ public class MencaoAluno {
 		}else if(n >= 9.0) {
 			setMencaoFinal("SS");
 		}
+		if(n < 0) {
+			try {
+				
+			} catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println("Nao é possivel adicionar nota negativa");
+			}
+		}
 		
 		return mencaoFinal;
 	}
