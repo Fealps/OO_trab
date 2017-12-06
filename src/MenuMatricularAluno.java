@@ -70,7 +70,7 @@ public class MenuMatricularAluno {
 		janela.getContentPane().add(materiaList);
 		janela.getContentPane().add(matricular);
 		
-		alunosListJ.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+		alunosListJ.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		alunosListJ.setVisibleRowCount(5);
 		
 		materiaList.addActionListener(new ActionListener() {
@@ -84,26 +84,38 @@ public class MenuMatricularAluno {
 		});
 		
 		
+		
 		matricular.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				k = materiaList.getSelectedIndex();
-				List<String> n = alunosListJ.getSelectedValuesList();
+				
+				System.out.println("Turma selecionada: "+t.getTurmas().get(k).getDisciplina());
+
+				int b = alunosListJ.getSelectedIndex();
+				System.out.println("ÍNDICE DO NÚMERO SELECIONADO: " +b);
+				//String n = alunosListJ.getSelectedValuesList().get(b);
+				String m = alunosListJ.getSelectedValue();
+				System.out.println("Aluno nome: "+m);
 				
 				for(int i = 0; i < a.alunos.size();i++) {					
 				
-					if(a.alunos.get(i).equals(n.get(i).toString())){
+					if(a.alunos.get(i).getNome().toString().equals(m)){
 						
 						t.getTurmas().get(k).matricular(a.alunos.get(i));
-						System.out.println("O aluno foi matriculado aqui..."+t.getTurmas().get(k).getAlunos().get(i).getNome());
+						//System.out.println("Turma selecionada:"+t.getTurmas().get(k).getDisciplina());
+						System.out.println("item selecionado: " +b);
+
 						
 					}
+					//System.out.println("Aluno nome:"+a.alunos.get(i).getNome().toString());
+					System.out.println("TESTE 2-ÍNDICE DO NÚMERO SELECIONADO: "+b);
+					//System.out.println("item selecionado" +b);
+
 				}
 				
-				System.out.println("Teste:"+n);
-				//System.out.println("Alunos cadastrado em "+t.getTurmas().get(k).getDisciplina().toString());
+				System.out.println("Teste 3: Item selecionado "+m+" e  indice "+b);
 				
 				janela.dispose();
 			}
