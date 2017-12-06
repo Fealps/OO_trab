@@ -29,7 +29,6 @@ public class MenuCadastrarAvaliacao {
 	private static int size;
 	private static JToggleButton buttons[];
 
-
 	
 public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 		size = turma.getSize();
@@ -63,8 +62,7 @@ public static void apresentarGUICadastrarAvaliacao (Turma turma) {
 			btn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
-					
-										
+						
 				}
 			});
 			bg.add(btn);

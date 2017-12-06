@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 
 public class Turma {
-	private Avaliacao aval;
+	private Avaliacao aval = new Avaliacao();
 	private String disciplina;
 	private ArrayList<Aluno> alunos = new ArrayList<>();
 	private ArrayList<Turma> turmas = new ArrayList<>();

@@ -42,6 +42,7 @@ public static void apresentarGUICadastrarTurma (Turma turma){
             	
             	turmaNova = new Turma();
             	turmaNova.setDisciplina(nome);
+            	turmaNova.setAval(new Avaliacao());
             	turma.cadastrar(turmaNova);
             
             	//JOptionPane.showMessageDialog(null, "Eu estou testando", "teste", JOptionPane.PLAIN_MESSAGE);

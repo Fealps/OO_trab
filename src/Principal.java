@@ -7,6 +7,7 @@ public class Principal {
 	     Turma t = new Turma();
 		
 		 Menu.apresentarGUI(a,t);
+
 		
 		
 	}
