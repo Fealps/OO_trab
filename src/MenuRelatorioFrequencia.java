@@ -21,6 +21,8 @@ public class MenuRelatorioFrequencia {
 	public static JRadioButton faltoso;
 	public static JPanel tabelaContent;
 	public static JLabel alunoNome = null;
+	public static JButton salvarFreq;
+	public static JButton fechar;
 	public static JLabel alunoMatricula = null;
 	static ImageIcon icon = null;
 
@@ -35,6 +37,9 @@ public class MenuRelatorioFrequencia {
 
 		tabela = new JTabbedPane();
 		tabela.setMinimumSize(new Dimension(600, 100));
+
+		salvarFreq = new JButton("Salvar Chamada");
+		fechar = new JButton("Fechar");
 
 		for (int i = 0; i < t.getTurmas().size(); i++) {
 
@@ -61,41 +66,67 @@ public class MenuRelatorioFrequencia {
 				// JLabel(t.getTurmas().get(i).getAlunos().get(j).getMatricula()));
 				tabelaContent.add(alunoMatricula);
 
-				presente = new JRadioButton("Presente");
-				faltoso = new JRadioButton("Ausente");
+				presente = new JRadioButton();
+				faltoso = new JRadioButton();
 				
+				presente.setText("Presente");
+				faltoso.setText("Ausente");
+
+
 				radioGrupo = new ButtonGroup();
-				
+
 				radioGrupo.add(presente);
 				radioGrupo.add(faltoso);
-				
-				//gruposButtonGroup.add(radioGrupo);
+
+				gruposButtonGroup.add(radioGrupo);
 
 				tabelaContent.add(presente);
 				tabelaContent.add(faltoso);
-				
+
 			}
 
-		/*	for (int w = 0; w < gruposButtonGroup.size(); w++) {
-				
-				for (int y = 0; y <gruposButtonGroup.get(w).getButtonCount();y ++) {
-					
-					if(gruposButtonGroup.get(w).getSelection().equals(presente.getModel())){
-						
+			salvarFreq.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					// TODO Auto-generated method stub
+
+					for (int i = 0; i < t.getTurmas().size(); i++) {
+
+						for (int w = 0; w < t.getTurmas().get(i).getAlunos().size(); w++) {
+
+							System.out.println("grupo " + w);
+
+							for (int y = 0; y < gruposButtonGroup.get(w).getButtonCount(); y++) {
+
+								System.out.println("teste:" + y);
+
+								if (gruposButtonGroup.get(w).isSelected(presente.getModel())) {
+
+									System.out.println("Estou presente");
+
+								}
+								if (gruposButtonGroup.get(w).isSelected(faltoso.getModel())) {
+
+									System.out.println("Estou faltoso");
+
+								}
+
+							}
+
+						}
+
 					}
-					
-			
-					
 				}
-
-				
-			}
-		*/
+			});
+			
 			
 			tabela.addTab(textT, null, tabelaContent, "nome da disciplina");
 			tabela.setMnemonicAt(0, KeyEvent.VK_1);
 
 		}
+		janela.add(salvarFreq, BorderLayout.SOUTH);
 		janela.getContentPane().add(tabela, BorderLayout.PAGE_START);
 
 	}
