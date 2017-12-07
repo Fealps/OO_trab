@@ -111,6 +111,7 @@ public class Aluno {
 	public void setError(boolean error) {
 		this.error = error;
 	}
+	
 	/*
 	 * public static Aluno getAlunos() { return alunos; }
 	 * 

@@ -12,12 +12,15 @@ public class Menu {
 	private static JFrame janela;
 	private static JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
 	
-	static MenuRelatorioAluno  	  menuRA  = new MenuRelatorioAluno();
-	static MenuCadastrarAluno  	  menuC   = new MenuCadastrarAluno();
-	static MenuCadastrarTurma     menuT   = new MenuCadastrarTurma();
-	static MenuRelatorioTurma     menuRT  = new MenuRelatorioTurma();
-	static MenuMatricularAluno	  menuMA  = new MenuMatricularAluno();
-	static MenuCadastrarAvaliacao menuCA  = new MenuCadastrarAvaliacao();
+	static MenuMatricularAluno	   menuMA  = new MenuMatricularAluno();
+	static MenuCadastrarAluno  	   menuC   = new MenuCadastrarAluno();
+	static MenuCadastrarTurma      menuT   = new MenuCadastrarTurma();
+	static MenuCadastrarAvaliacao  menuCA  = new MenuCadastrarAvaliacao();
+	static MenuRelatorioAluno  	   menuRA  = new MenuRelatorioAluno();
+	static MenuRelatorioTurma      menuRT  = new MenuRelatorioTurma();
+	static MenuRelatorioFrequencia menuRF  = new MenuRelatorioFrequencia();
+	static MenuRelatorioNotas 	   menuRN  = new MenuRelatorioNotas();
+	
 	static Avaliacao aval;
 
 
@@ -100,7 +103,7 @@ public class Menu {
 		btn6.addActionListener( new ActionListener() {
 			
             public void actionPerformed(ActionEvent e) {         	
-            	
+            	menuRN.apresentarGUIExibir(a,t);
             }
             
 		});
@@ -116,7 +119,7 @@ public class Menu {
 		btn8.addActionListener( new ActionListener() {
 			
             public void actionPerformed(ActionEvent e) {         	
-            	
+            	menuRF.apresentarGUIExibir(a,t);
             }
             
 		});
