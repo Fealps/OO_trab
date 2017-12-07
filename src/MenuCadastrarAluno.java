@@ -1,6 +1,7 @@
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -60,6 +61,9 @@ public class MenuCadastrarAluno {
 		janela.setMinimumSize(new Dimension(200, 300));
 		// janela.setLayout(new GridLayout(6, 2, 3, 3));
 		janela.setLayout(new GridLayout(6, 2, 3, 3));
+		
+		Rectangle r = new Rectangle(200,20);
+		JTFnome.setBounds(r);
 
 		confirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

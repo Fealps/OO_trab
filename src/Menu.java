@@ -26,6 +26,10 @@ public class Menu {
 		janela = new JFrame("Gerenciador Acadêmico");
 
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.getContentPane().setBackground(Color .blue);
+		
+		
+		
 
 		btn1 = new JButton("Cadastro de Alunos");
 		btn2 = new JButton("Relatorio Alunos");
@@ -35,6 +39,9 @@ public class Menu {
 		btn6 = new JButton("Relatorio de Notas");
 		btn7 = new JButton("Matricular Alunos");
 		btn8 = new JButton("Lista de presença");
+		
+		//btn1.setBackground(Color .orange);
+		//btn1.setOpaque(true);
 
 		janela.getContentPane().add(btn1);
 		janela.getContentPane().add(btn2);
