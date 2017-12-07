@@ -4,9 +4,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 
 public class MenuRelatorioAluno {
 
@@ -25,6 +27,7 @@ public class MenuRelatorioAluno {
 	private static String[] lista;
 	private static JTextField alunoNome;
 	private static JTextField alunoMatricula;
+	private static MaskFormatter mascaraMatricula;
 	static int k;
 
 	public static void apresentarGUIExibir(Aluno a) {
@@ -54,13 +57,24 @@ public class MenuRelatorioAluno {
 		alunoNome.setEditable(false);
 		alunoNome.setVisible(false);
 		alunoMatricula.setEditable(false);
-		alunoMatricula.setVisible(false);
+		
 		salvar.setVisible(false);
 		cancelarEditar.setVisible(false);
 		
 
 		nomesList = new JComboBox<String>();
 		materiasList = new JComboBox<String>();
+		
+		try {
+			mascaraMatricula = new MaskFormatter("##/#######");
+
+		} catch (ParseException exp) {
+			exp.printStackTrace();
+			mascaraMatricula.setPlaceholderCharacter('_');
+
+		}
+		JFormattedTextField matriculaF = new JFormattedTextField(mascaraMatricula);
+		matriculaF.setVisible(false);
 
 		for (int i = 0; i < a.alunos.size(); i++) {
 			// j1 = new JLabel(a.alunos.get(i).getNome().toString());
@@ -83,8 +97,7 @@ public class MenuRelatorioAluno {
 				k = nomesList.getSelectedIndex();
 				
 				j2.setText(a.alunos.get(k).getMatricula().toString());
-				
-				
+
 			}
 		});
 		
@@ -95,7 +108,7 @@ public class MenuRelatorioAluno {
 		janela.getContentPane().add(j2);
 		janela.getContentPane().add(materiasList);
 		janela.getContentPane().add(alunoNome);
-		janela.getContentPane().add(alunoMatricula);
+		janela.getContentPane().add(matriculaF);
 		janela.getContentPane().add(salvar);
 
 		janela.getContentPane().add(c);
@@ -122,9 +135,13 @@ public class MenuRelatorioAluno {
 				// TODO Auto-generated method stub
 				if(editar.isEnabled()) {
 					alunoNome.setVisible(true);
-					alunoMatricula.setVisible(true);
+					alunoNome.setEditable(true);
+					matriculaF.setVisible(true);
 					salvar.setVisible(true);
 					cancelarEditar.setVisible(true);
+					
+				 alunoNome.setText(Aluno.alunos.get(k).getNome().toString());	
+				 matriculaF.setText(Aluno.alunos.get(k).getMatricula().toString());
 					
 				}
 			}
@@ -137,7 +154,7 @@ public class MenuRelatorioAluno {
 				// TODO Auto-generated method stub
 				if(cancelarEditar.isEnabled()) {
 				alunoNome.setVisible(false);
-				alunoMatricula.setVisible(false);
+				matriculaF.setVisible(false);
 				salvar.setVisible(false);
 				}
 				cancelarEditar.setVisible(false);
