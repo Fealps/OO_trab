@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import javafx.scene.control.RadioButton;
 
 public class MenuRelatorioFrequencia {
@@ -73,7 +75,7 @@ public class MenuRelatorioFrequencia {
 				tabelaContent.add(faltoso);
 				
 			}
-			
+
 		/*	for (int w = 0; w < gruposButtonGroup.size(); w++) {
 				
 				for (int y = 0; y <gruposButtonGroup.get(w).getButtonCount();y ++) {
@@ -90,8 +92,6 @@ public class MenuRelatorioFrequencia {
 			}
 		*/
 			
-		
-		
 			tabela.addTab(textT, null, tabelaContent, "nome da disciplina");
 			tabela.setMnemonicAt(0, KeyEvent.VK_1);
 
