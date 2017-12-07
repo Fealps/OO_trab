@@ -10,6 +10,7 @@ public class MenuRelatorioFrequencia {
 	public static String textT = null;
 	public static JComponent tPanels = null;
 	// public static JLabel j3 = null;
+	public static JPanel tab;
 	public static JLabel t1 = null;
 	static ImageIcon icon = null;
 	private static JButton c;
@@ -21,22 +22,23 @@ public class MenuRelatorioFrequencia {
 		janela.setVisible(true);
 		janela.setMinimumSize(new Dimension(600, 300));
 		janela.setTitle("Relatório de frequência de alunos");
+		//janela.pack();
 
 		jTPane = new JTabbedPane();
 		jTPane.setMinimumSize(new Dimension(600, 100));
 		
 		for (int i = 0; i < t.getTurmas().size();i ++) {
+			
+			tab = new JPanel();		
+			tab.setVisible(true);
+			tab.setLayout(new BorderLayout());
+			
+			tab.add(new JLabel("teste"));			
+
 
 			
-			tPanels = new JComponent() {
-				
-			} ;
-			tPanels.setVisible(true);
-			tPanels.setLayout(new BorderLayout());
-			tPanels = makeTextPanel("Panel #"+i+1);
-			
 			textT = t.getTurmas().get(i).getDisciplina().toString();
-			jTPane.addTab(textT, null, tPanels, "nome da disciplina");
+			jTPane.addTab(textT, null, tab, "nome da disciplina");
 			jTPane.setMnemonicAt(0, KeyEvent.VK_1);
 			
 		}
