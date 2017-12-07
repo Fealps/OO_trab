@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.text.MaskFormatter;
-
 import exceptionpac.BlankException;
 import exceptionpac.WrongFormatException;
 

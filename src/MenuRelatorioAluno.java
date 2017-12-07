@@ -1,12 +1,8 @@
-import java.awt.*;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
 import java.text.ParseException;
-import java.util.ArrayList;
-
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 
@@ -24,10 +20,12 @@ public class MenuRelatorioAluno {
 	private static JButton cancelarEditar;
 	private static JComboBox<String> nomesList;
 	private static JComboBox<String> materiasList;
-	private static String[] lista;
+	//private static String[] lista;
 	private static JTextField alunoNome;
 	private static JTextField alunoMatricula;
 	private static MaskFormatter mascaraMatricula;
+	private static String novoNome;
+	private static String novaMatricula;
 	static int k;
 
 	public static void apresentarGUIExibir(Aluno a) {
@@ -76,10 +74,10 @@ public class MenuRelatorioAluno {
 		JFormattedTextField matriculaF = new JFormattedTextField(mascaraMatricula);
 		matriculaF.setVisible(false);
 
-		for (int i = 0; i < a.alunos.size(); i++) {
+		for (int i = 0; i < Aluno.alunos.size(); i++) {
 			// j1 = new JLabel(a.alunos.get(i).getNome().toString());
 			// j2 = new JLabel(a.alunos.get(i).getMatricula().toString());
-			nomesList.addItem(a.alunos.get(i).getNome().toString());
+			nomesList.addItem(Aluno.alunos.get(i).getNome().toString());
 			// janela.getContentPane().add(j1);
 			// janela.getContentPane().add(j2);
 		}
@@ -96,7 +94,7 @@ public class MenuRelatorioAluno {
 				
 				k = nomesList.getSelectedIndex();
 				
-				j2.setText(a.alunos.get(k).getMatricula().toString());
+				j2.setText(Aluno.alunos.get(k).getMatricula().toString());
 
 			}
 		});
@@ -158,6 +156,24 @@ public class MenuRelatorioAluno {
 				salvar.setVisible(false);
 				}
 				cancelarEditar.setVisible(false);
+				
+			}
+		});
+		
+		salvar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+								
+				Aluno.alunos.get(k).setNome(alunoNome.getText());
+				Aluno.alunos.get(k).setMatricula(matriculaF.getText());
+				
+				janela.dispose();
+								
+							
+				
 				
 			}
 		});

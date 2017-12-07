@@ -20,20 +20,17 @@ public class MenuCadastrarAluno {
 	// private static final String TamanhoFixoText = null;
 	static Aluno alunoNovo;
 	private static JFrame janela;
-	private static JTextField JTFnome, JTFmatricula;
+	private static JTextField JTFnome;
 	private static JLabel JLnome, JLmatricula;
 	private static JButton confirmar;
 	private static MaskFormatter mascaraMatricula;
-	private static Object TamanhoFixoText;
-	private int tamMax;
-
 	public static void apresentarGUICadastrarAluno(Aluno aluno) {
 
 		janela = new JFrame("Cadastro de alunos");
 		// janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JTFnome = new JTextField();
-		JTFmatricula = new JTextField();
+		new JTextField();
 
 		try {
 			mascaraMatricula = new MaskFormatter("##/#######");
@@ -83,14 +80,13 @@ public class MenuCadastrarAluno {
 					alunoNovo.setNome(nome);
 					alunoNovo.setMatricula(matricula);
 					if (!alunoNovo.getError()) {
-						aluno.cadastrar(alunoNovo);
+						Aluno.cadastrar(alunoNovo);
 						janela.dispose();
 					}
 
 				} else if (op == JOptionPane.NO_OPTION) {
 
-					
-
+		
 				}
 
 			}

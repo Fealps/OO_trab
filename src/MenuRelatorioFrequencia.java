@@ -11,7 +11,8 @@ public class MenuRelatorioFrequencia {
 	public static JComponent tPanels = null;
 	// public static JLabel j3 = null;
 	public static JPanel tab;
-	public static JLabel t1 = null;
+	public static JLabel alunoNome = null;
+	public static JLabel alunoMatricula = null;
 	static ImageIcon icon = null;
 	private static JButton c;
 	private static JComboBox<String> alunoList;
@@ -31,13 +32,26 @@ public class MenuRelatorioFrequencia {
 			
 			tab = new JPanel();		
 			tab.setVisible(true);
-			tab.setLayout(new BorderLayout());
-			
-			tab.add(new JLabel("teste"));			
-
-
+			tab.setLayout(new GridLayout(0, 2));
 			
 			textT = t.getTurmas().get(i).getDisciplina().toString();
+
+			
+			for(int j = 0;j < t.getTurmas().get(i).getAlunos().size() ;j ++) {
+				
+				alunoNome = new JLabel();	
+				alunoNome.setText(t.getTurmas().get(i).getAlunos().get(j).getNome());
+				
+				alunoMatricula = new JLabel();
+				alunoNome.setText(t.getTurmas().get(i).getAlunos().get(j).getMatricula());	
+				
+				tab.add(alunoNome);
+				tab.add(alunoMatricula);
+				
+				
+			}
+
+			
 			jTPane.addTab(textT, null, tab, "nome da disciplina");
 			jTPane.setMnemonicAt(0, KeyEvent.VK_1);
 			
