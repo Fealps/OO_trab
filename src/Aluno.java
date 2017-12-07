@@ -6,6 +6,7 @@ import exceptionpac.WrongFormatException;
 public class Aluno {
 
 	private boolean error = false;
+	private boolean presence ;
 	private String nome;
 	private String matricula;
 	static ArrayList<Aluno> alunos = new ArrayList<>();
@@ -109,6 +110,16 @@ public class Aluno {
 	public void setError(boolean error) {
 		this.error = error;
 	}
+
+	public boolean getPresence() {
+		return presence;
+	}
+
+	public void setPresence(boolean presence) {
+		this.presence = presence;
+	}
+	
+	
 	
 	/*
 	 * public static Aluno getAlunos() { return alunos; }
