@@ -17,6 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 
+import exceptionpac.FullClassException;
+
 public class MenuMatricularAluno {
 
 	private static JFrame janela;
@@ -104,13 +106,33 @@ public class MenuMatricularAluno {
 					System.out.println(t.getTurmas().get(k).getVagas());
 					if(a.alunos.get(i).getNome().toString().equals(m)){
 						
-						t.getTurmas().get(k).matricular(a.alunos.get(i));
-						t.getTurmas().get(k).reduzVagas();
-						//System.out.println("Turma selecionada:"+t.getTurmas().get(k).getDisciplina());
 						System.out.println("item selecionado: " +b);
-						String message = "Aluno:"+a.alunos.get(i).getNome()+" matriculado em:"+t.getTurmas().get(k).getDisciplina();		
+						/*
+						for(int k = 0; k < a.alunos.size();k++) {
+							if(t.getAlunos().get(k).pesquisar(t.getAlunos().get(i))) {
+								System.out.println("OK");
+							}
+						}
+							*/
 						
-						JOptionPane.showMessageDialog(null, message, "Aluno cadastrado", JOptionPane.PLAIN_MESSAGE);
+						if(t.getTurmas().get(k).getVagas() > 0) {
+							t.getTurmas().get(k).matricular(a.alunos.get(i));
+							t.getTurmas().get(k).reduzVagas();
+							String message = "Aluno:"+a.alunos.get(i).getNome()+" matriculado em:"+t.getTurmas().get(k).getDisciplina();		
+							JOptionPane.showMessageDialog(null, message, "Aluno cadastrado", JOptionPane.PLAIN_MESSAGE);
+						}else {
+							try {
+								throw new FullClassException("Turma lotada");
+							} catch (FullClassException e1) {
+								String message = "Não foi possivel matricular o aluno "+a.alunos.get(i).getNome()+" na turma "+t.getTurmas().get(k).getDisciplina() + " por insuficiencia de vagas.";
+								JOptionPane.showMessageDialog(null, message,"ERRO", JOptionPane.ERROR_MESSAGE);
+								e1.printStackTrace();
+							}
+							
+						}
+							
+						//System.out.println("Turma selecionada:"+t.getTurmas().get(k).getDisciplina());
+						
 					}
 					System.out.println(t.getTurmas().get(k).getVagas());
 					//System.out.println("Aluno nome:"+a.alunos.get(i).getNome().toString());
@@ -120,8 +142,6 @@ public class MenuMatricularAluno {
 				}
 				
 				System.out.println("Teste 3: Item selecionado "+m+" e  indice "+b);
-				
-				janela.dispose();
 			}
 		});
 

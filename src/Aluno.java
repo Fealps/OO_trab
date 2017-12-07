@@ -28,26 +28,24 @@ public class Aluno {
 				a.getMatricula());
 
 		JOptionPane.showMessageDialog(null, message, "Cadastro de alunos", JOptionPane.PLAIN_MESSAGE);
-
+		
 		System.out.printf("O aluno %s com a matrícula %s" + " foi matriculado com sucesso ", a.getNome(),
 				a.getMatricula());
+		System.out.println();
 	}
 
-	static Aluno pesquisar(String n) {
-
-		Aluno resposta = null;
+	static boolean pesquisar(Aluno n) {
 
 		for (int i = 0; i < alunos.size(); i++) {
 			Aluno aluno = alunos.get(i);
-			if (n.equals(aluno.nome)) {
-				System.out.println("o aluno " + n + ",da matricula " + aluno.getMatricula() + " esta na posiçao " + i);
-				break;
+			if (n.nome.equals(aluno.nome) && n.matricula.equals(aluno.matricula)) {
+				return true;
 			} else {
-				System.out.println("Esse aluno nao existe!!");
+				return false;			
 			}
 		}
 
-		return resposta;
+		return false;
 
 	}
 
