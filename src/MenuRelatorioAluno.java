@@ -67,7 +67,7 @@ public class MenuRelatorioAluno {
 
 		janela.getContentPane().add(c);
 
-		janela.setMinimumSize(new Dimension(200, 300));
+		janela.setMinimumSize(new Dimension(400, 200));
 		janela.setLayout(new GridLayout(0, 2, 10, 10));
 
 		janela.pack();
