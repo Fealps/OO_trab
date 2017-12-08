@@ -6,13 +6,14 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class MenuRelatorioTurma {
 
 	private static JFrame janela;
 	public static JLabel j1 = null;
 	public static JLabel j2 = null;
-	//public static JLabel j3 = null;
+	// public static JLabel j3 = null;
 	public static JLabel t1 = null;
 	public static JLabel t2 = null;
 	public static JLabel t3 = null;
@@ -20,8 +21,19 @@ public class MenuRelatorioTurma {
 	private static JComboBox<String> avaList;
 	private static JComboBox<String> alunoList;
 
-
 	public static void apresentarGUIExibir(Turma t) {
+
+		int tamanhoTurma = t.getTurmas().size();
+
+		if (tamanhoTurma == 0) {
+
+			JOptionPane.showMessageDialog(null, "Nenhuma turma cadastrada " + ", cadastre uma turma primeiramente");
+
+			MenuCadastrarTurma.apresentarGUICadastrarTurma(t);
+
+			janela.setVisible(false);
+
+		}
 
 		janela = new JFrame("Relatorio de Turmas");
 		janela.setLayout(new GridLayout(0, 3));
@@ -58,7 +70,7 @@ public class MenuRelatorioTurma {
 			} catch (NullPointerException e) {
 				System.out.println("Avaliação inexistente");
 			}
-			
+
 			try {
 				for (int l = 0; l < t.getTurmas().get(i).getAlunos().size(); l++) {
 					alunoList.addItem(t.getTurmas().get(i).getAlunos().get(l).getNome().toString());
@@ -66,11 +78,11 @@ public class MenuRelatorioTurma {
 			} catch (NullPointerException e) {
 				System.out.println("Aluno inexistente");
 			}
-			
+
 			janela.getContentPane().add(avaList);
 			janela.getContentPane().add(alunoList);
-			//j3 = new JLabel();
-			//janela.getContentPane().add(j3);
+			// j3 = new JLabel();
+			// janela.getContentPane().add(j3);
 		}
 
 		avaList.addActionListener(new ActionListener() {

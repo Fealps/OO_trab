@@ -20,7 +20,7 @@ public class MenuRelatorioAluno {
 	private static JButton cancelarEditar;
 	private static JComboBox<String> nomesList;
 	private static JComboBox<String> materiasList;
-	//private static String[] lista;
+	// private static String[] lista;
 	private static JTextField alunoNome;
 	private static JTextField alunoMatricula;
 	private static MaskFormatter mascaraMatricula;
@@ -29,9 +29,22 @@ public class MenuRelatorioAluno {
 	static int k;
 
 	public static void apresentarGUIExibir(Aluno a) {
-		
+
+		int tamanhoAlunos = a.alunos.size();
+
+		if (tamanhoAlunos == 0) {
+
+			JOptionPane.showMessageDialog(null, "Nenhuma aluno cadastrado " + ", cadastre um aluno primeiramente");
+
+			
+			MenuCadastrarAluno.apresentarGUICadastrarAluno(a);
+			janela.setVisible(false);
+			
+
+		}
+
 		janela = new JFrame("Relatorio de alunos");
-		
+
 		t1 = new JLabel("Nome ");
 		t2 = new JLabel("Matrícula");
 		t3 = new JLabel("Turmas cadastradas");
@@ -42,27 +55,24 @@ public class MenuRelatorioAluno {
 
 		alunoNome = new JTextField();
 		alunoMatricula = new JTextField();
-		
-		
 
 		// janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		c.setText("Fechar");
-		
+
 		janela.getContentPane().add(t1);
 		janela.getContentPane().add(t2);
 		janela.getContentPane().add(t3);
-		
+
 		alunoNome.setEditable(false);
 		alunoNome.setVisible(false);
 		alunoMatricula.setEditable(false);
-		
+
 		salvar.setVisible(false);
 		cancelarEditar.setVisible(false);
-		
 
 		nomesList = new JComboBox<String>();
 		materiasList = new JComboBox<String>();
-		
+
 		try {
 			mascaraMatricula = new MaskFormatter("##/#######");
 
@@ -83,24 +93,23 @@ public class MenuRelatorioAluno {
 		}
 
 		j2 = new JLabel();
-		
-		//nomesList.setEditable();
+
+		// nomesList.setEditable();
 
 		nomesList.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+
 				k = nomesList.getSelectedIndex();
-				
+
 				j2.setText(Aluno.alunos.get(k).getMatricula().toString());
 
 			}
 		});
-		
-		
-		j2 = new JLabel ();
+
+		j2 = new JLabel();
 
 		janela.getContentPane().add(nomesList);
 		janela.getContentPane().add(j2);
@@ -125,56 +134,52 @@ public class MenuRelatorioAluno {
 				janela.dispose();
 			}
 		});
-		
+
 		editar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(editar.isEnabled()) {
+				if (editar.isEnabled()) {
 					alunoNome.setVisible(true);
 					alunoNome.setEditable(true);
 					matriculaF.setVisible(true);
 					salvar.setVisible(true);
 					cancelarEditar.setVisible(true);
-					
-				 alunoNome.setText(Aluno.alunos.get(k).getNome().toString());	
-				 matriculaF.setText(Aluno.alunos.get(k).getMatricula().toString());
-					
+
+					alunoNome.setText(Aluno.alunos.get(k).getNome().toString());
+					matriculaF.setText(Aluno.alunos.get(k).getMatricula().toString());
+
 				}
 			}
 		});
-		
+
 		cancelarEditar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(cancelarEditar.isEnabled()) {
-				alunoNome.setVisible(false);
-				matriculaF.setVisible(false);
-				salvar.setVisible(false);
+				if (cancelarEditar.isEnabled()) {
+					alunoNome.setVisible(false);
+					matriculaF.setVisible(false);
+					salvar.setVisible(false);
 				}
 				cancelarEditar.setVisible(false);
-				
+
 			}
 		});
-		
+
 		salvar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
-								
+
 				Aluno.alunos.get(k).setNome(alunoNome.getText());
 				Aluno.alunos.get(k).setMatricula(matriculaF.getText());
-				
+
 				janela.dispose();
-								
-							
-				
-				
+
 			}
 		});
 

@@ -33,6 +33,32 @@ public class MenuMatricularAluno {
 	private static boolean state ;
 
 	public static void apresentarGUIMatricularAluno(Aluno a, Turma t) {
+		
+		int tamanhoAlunos = a.alunos.size();
+		int tamanhoTurma = t.getTurmas().size();
+
+
+		if (tamanhoAlunos == 0) {
+
+			JOptionPane.showMessageDialog(null, "Nenhuma aluno cadastrado " + ", cadastre um aluno primeiramente");
+
+			
+			MenuCadastrarAluno.apresentarGUICadastrarAluno(a);
+			janela.setVisible(false);
+			
+
+		}
+		
+		if (tamanhoTurma == 0) {
+
+			JOptionPane.showMessageDialog(null, "Nenhuma turma cadastrada " + ", cadastre uma turma primeiramente");
+			
+			MenuCadastrarTurma.apresentarGUICadastrarTurma(t);
+			janela.setVisible(false);
+
+		}
+		
+		
 
 		janela = new JFrame("Matricular aluno");
 		matricular = new JButton();
