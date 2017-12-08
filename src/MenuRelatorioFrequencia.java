@@ -6,9 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import com.sun.xml.internal.bind.v2.TODO;
 
-import javafx.scene.control.RadioButton;
 
 public class MenuRelatorioFrequencia {
 
