@@ -21,6 +21,7 @@ public class MenuCadastrarNota {
 
 	private static JFrame janela;
 	private static JComboBox<String> atividades;
+	private static JComboBox<String> alunos;
 	private static ArrayList<String> disciplinasDisponiveis = null;
 	public static JLabel t1 = null;
 	public static JLabel t2 = null;
@@ -66,11 +67,17 @@ public class MenuCadastrarNota {
 			if (disciplinaEquivalente.equals(disciplinaEscolhida)) {
 				
 				atividades = new JComboBox<String>();
+				alunos = new JComboBox<String>();
 				
 				for(int j = 0; j < t.getTurmas().get(i).getAval().getAvaliacoes().size();j++) {
 					
 					String atividadeNome = t.getTurmas().get(i).getAval().getAvaliacoes().get(j).getNome();					
 					atividades.addItem(atividadeNome);
+					
+				}
+				for(int k = 0; k < t.getTurmas().get(i).getAlunos().size();k ++) {
+					String alunoNome = t.getTurmas().get(i).getAlunos().get(k).getNome();
+					alunos.addItem(alunoNome);
 					
 				}
 				
@@ -106,7 +113,7 @@ public class MenuCadastrarNota {
 				
 				
 				janela.getContentPane().add(atividades);
-				janela.getContentPane().add(new JLabel("Teste Nome"));
+				janela.getContentPane().add(alunos);
 				janela.getContentPane().add(matriculaF);
 
 				janela.getContentPane().add(cancel);
