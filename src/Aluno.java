@@ -29,7 +29,7 @@ public class Aluno {
 
 		JOptionPane.showMessageDialog(null, message, "Cadastro de alunos", JOptionPane.PLAIN_MESSAGE);
 		
-		System.out.printf("O aluno %s com a matrícula %s" + " foi matriculado com sucesso ", a.getNome(),
+		System.out.printf("O aluno %s com a matrícula %s" + " foi cadastrado com sucesso ", a.getNome(),
 				a.getMatricula());
 		System.out.println();
 	}
