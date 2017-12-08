@@ -103,6 +103,7 @@ public class MenuRelatorioFrequencia {
 								if (gruposButtonGroup.get(w).isSelected(presente.getModel())) {
 
 									System.out.println("Estou presente");
+									//JOptionPane.showMessageDialog(null, "Teste", "Teste", JOptionPane.PLAIN_MESSAGE);
 
 								}
 								if (gruposButtonGroup.get(w).isSelected(faltoso.getModel())) {
