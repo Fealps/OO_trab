@@ -25,10 +25,13 @@ public class Turma {
 		this.vagas--;
 	}
 
-	public void setVagas(int vagas) {
-		this.vagas = vagas;
+	public void setVagas(String vaga) {
+		int v = Integer.parseInt(vaga);
+		this.vagas = v;
 	}
-
+	public void setVagas(int vaga) {
+		this.vagas = vaga;
+	}
 	public Turma() {
 		// TODO Auto-generated constructor stub
 	}
